@@ -40,11 +40,13 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
+import { LifeCycleChildComponent } from './main-lifecycle/life-cycle-child/life-cycle-child.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainLifecycleComponent
+    MainLifecycleComponent,
+    LifeCycleChildComponent
   ],
   imports: [
     BrowserModule,
