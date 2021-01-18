@@ -33,7 +33,7 @@
 
     <section>
       <mat-list>
-        <mat-list-item *ngFor="let client of clients">
+        <mat-list-item *ngFor="let client of clients; let i = index">
           <mat-icon mat-list-icon>person</mat-icon>
           <p mat-line>
             <app-life-cycle-child
@@ -49,10 +49,10 @@
               </mat-chip>
             </mat-chip-list>
           </p>
-          <button mat-icon-button color="accent">
+          <button mat-icon-button color="accent" (click)="remove(i)">
             <mat-icon>delete</mat-icon>
           </button>
-          <button mat-icon-button color="primary">
+          <button mat-icon-button color="primary" (click)="edit(i)">
             <mat-icon>edit</mat-icon>
           </button>
         </mat-list-item>
