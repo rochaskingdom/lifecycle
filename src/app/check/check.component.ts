@@ -4,6 +4,7 @@ import {
   AfterViewInit,
   Component,
   DoCheck,
+  Input,
   OnChanges,
   OnDestroy,
   OnInit,
@@ -17,10 +18,13 @@ import {
 })
 export class CheckComponent implements OnInit, OnChanges, DoCheck, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
 
+  @Input() test: string;
+
   name = '';
   age = 0;
 
   constructor() {
+    console.log('constructor');
   }
 
   ngOnInit(): void {
