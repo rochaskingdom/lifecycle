@@ -1,13 +1,4 @@
-import {
-  AfterContentInit,
-  AfterViewInit,
-  Component,
-  Input,
-  OnChanges,
-  OnDestroy,
-  OnInit,
-  SimpleChanges
-} from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 
 export interface LifeCycleEvent {
   id: number;
@@ -29,10 +20,14 @@ export class LifeCycleChildComponent implements OnInit, OnDestroy, OnChanges, Af
   events: LifeCycleEvent[] = [];
   nextEventId = 0;
   colors = ['accent', 'warn', 'primary'];
+  intervalRef = null;
 
   constructor() {
     console.log(this.name, '- constructor');
     this.newEvent('constructor');
+    this.intervalRef = setInterval(() => {
+      console.log('interval');
+    }, 2000);
   }
 
   ngOnInit(): void {
@@ -66,6 +61,7 @@ export class LifeCycleChildComponent implements OnInit, OnDestroy, OnChanges, Af
   ngOnDestroy(): void {
     console.log(this.name, '- ngOnDestroy');
     this.newEvent('ngOnDestroy');
+    clearInterval(this.intervalRef);
   }
 
   newEvent(name: string): void {
