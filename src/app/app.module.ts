@@ -42,13 +42,17 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
 import { LifeCycleChildComponent } from './main-lifecycle/life-cycle-child/life-cycle-child.component';
 import { ChildChildComponent } from './main-lifecycle/life-cycle-child/child-child/child-child.component';
+import { CheckComponent } from './check/check.component';
+import { CheckChildComponent } from './check/check-child/check-child.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainLifecycleComponent,
     LifeCycleChildComponent,
-    ChildChildComponent
+    ChildChildComponent,
+    CheckComponent,
+    CheckChildComponent
   ],
   imports: [
     BrowserModule,
